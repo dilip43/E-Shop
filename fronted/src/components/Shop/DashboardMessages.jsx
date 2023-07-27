@@ -8,7 +8,7 @@ import socketIO from 'socket.io-client';
 import { format } from 'timeago.js';
 import { server } from '../../server';
 import styles from '../../styles/styles';
-const ENDPOINT = 'https://socket-ecommerce-tu68.onrender.com/';
+const ENDPOINT = 'https://socket-eshop.onrender.com/';
 const socketId = socketIO(ENDPOINT, { transports: ['websocket'] });
 
 const DashboardMessages = () => {
