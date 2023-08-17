@@ -40,7 +40,7 @@ router.post(
 
 			const activationToken = createActivationToken(seller);
 
-			const activationUrl = `https://e-shop-x2xi.vercel.app/activation/${activationToken}`;
+			const activationUrl = `https://e-shop-x2xi.vercel.app/seller/activation/${activationToken}`;
 
 			try {
 				await sendMail({
