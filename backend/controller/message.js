@@ -40,7 +40,7 @@ router.post(
 				message,
 			});
 		} catch (error) {
-			return next(new ErrorHandler(error.message), 500);
+			return next(new ErrorHandler(error.message, 500));
 		}
 	})
 );
@@ -59,7 +59,7 @@ router.get(
 				messages,
 			});
 		} catch (error) {
-			return next(new ErrorHandler(error.message), 500);
+			return next(new ErrorHandler(error.message, 500));
 		}
 	})
 );
