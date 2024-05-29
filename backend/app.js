@@ -5,9 +5,19 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+const allowedOrigins = ['https://e-shop-x2xi.vercel.app', 'http://localhost:3000'];
+
 app.use(
 	cors({
-		origin: 'https://e-shop-x2xi.vercel.app',
+		origin: (origin, callback) => {
+			// Allow requests with no origin (like mobile apps or curl requests)
+			if (!origin) return callback(null, true);
+			if (allowedOrigins.indexOf(origin) === -1) {
+				const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+				return callback(new Error(msg), false);
+			}
+			return callback(null, true);
+		},
 		credentials: true,
 	})
 );
